@@ -32,7 +32,8 @@ I focus on:
 ### Phase 2: Reasoning & Agents (In Progress)
 | Date | Paper Title | Links | Tags | My Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| TBD | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | [Pending]() |
+| 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | [Read](./notes/2022_CoT.md) |
+
 
 ## 💡 Key Takeaways (核心思考)
 
