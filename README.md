@@ -33,6 +33,7 @@ I focus on:
 | Date | Paper Title | Links | Tags | My Notes |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | [Read](./notes/2022_CoT.md) |
+| 2026-01-010 | **Self-Consistency Improves Chain of Thought Reasoning in Language Models** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT` | [Read](./notes/2023_Self_Consistency.md) |
 
 
 ## 💡 Key Takeaways (核心思考)
