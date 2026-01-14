@@ -33,8 +33,8 @@ I focus on:
 | Date | Paper Title | Links | Tags | My Notes |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | [Read](./notes/2022_CoT.md) |
-| 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning in Language Models** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT` | [Read](./notes/2023_Self_Consistency.md) |
-| 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** | [PDF](https://arxiv.org/abs/2305.10601) | `CoT` | [Read](./notes/2023_Tree_of_Thoughts.md) |
+| 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning in Language Models** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT-SC` | [Read](./notes/2023_Self_Consistency.md) |
+| 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** | [PDF](https://arxiv.org/abs/2305.10601) | `ToT` | [Read](./notes/2023_Tree_of_Thoughts.md) |
 | 2026-01-14 | **ReAct: Synergizing Reasoning and Acting in Language Models** | [PDF](https://arxiv.org/abs/2210.03629) | `Agent、tools_call` | [Read](./notes/2023_ReAct.md) |
 
 ## 💡 Key Takeaways (核心思考)
