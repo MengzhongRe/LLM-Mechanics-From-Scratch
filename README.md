@@ -36,6 +36,7 @@ I focus on:
 | 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning in Language Models** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT-SC` | [Read](./notes/2023_Self_Consistency.md) |
 | 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** | [PDF](https://arxiv.org/abs/2305.10601) | `ToT` | [Read](./notes/2023_Tree_of_Thoughts.md) |
 | 2026-01-14 | **ReAct: Synergizing Reasoning and Acting in Language Models** | [PDF](https://arxiv.org/abs/2210.03629) | `Agent、tools_call` | [Read](./notes/2023_ReAct.md) |
+| 2026-01-15 | **LoRA: Low-Rank Adaptation of Large Language Models** | [PDF](https://arxiv.org/abs/2106.09685) | `LoRA,fine_tuning` | [Read](./notes/2021_LoRA.md) |
 
 ## 💡 Key Takeaways (核心思考)
 
