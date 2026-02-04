@@ -20,7 +20,6 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 
 - `📂 notes/`: My in-depth analysis and summaries (Markdown).
 - `📄 README.md`: The roadmap and progress tracker.
-- `🧠 thoughts/`: Essays on "Logic vs. Neural Networks".
 
 ## 📝 Reading List & Roadmap (阅读清单与路线图)
 
@@ -30,17 +29,17 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2025-12-30 | **Attention Is All You Need** | [PDF](https://arxiv.org/pdf/1706.03762.pdf) | `Transformer` | ✅ Done |
 | 2025-12-30 | **BERT: Pre-training of Deep Bidirectional Transformers** | [PDF](https://arxiv.org/pdf/1810.04805.pdf) | `Encoder` | ✅ Done |
 | 2026-01-08 | **Language Models are Few-Shot Learners (GPT-3)** | [PDF](https://arxiv.org/pdf/2005.14165.pdf) | `Decoder`, `Few-Shot` | ✅ Done |
-| 2026-01-20 | **Emergent Abilities of Large Language Models** | [PDF](https://arxiv.org/abs/2206.07682) | `Scaling_Law`, `Phase_Transition` | ✅ Done |
+| 2026-02-04 | **Emergent Abilities of Large Language Models** | [PDF](https://arxiv.org/abs/2206.07682) | `Scaling_Law`, `Phase_Transition` | ✅ Done |
 
 ### Phase 2: Reasoning & Agents (The "Mind")
 
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | ✅ Done |
-| 2026-01-22 | **Large Language Models are Zero-Shot Reasoners** | [PDF](https://arxiv.org/abs/2205.11916) | `Zero-Shot`, `Prompting` | ✅ Done |
 | 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT-SC`, `Ensemble` | ✅ Done |
 | 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving** | [PDF](https://arxiv.org/abs/2305.10601) | `ToT`, `Search` | ✅ Done |
 | 2026-01-14 | **ReAct: Synergizing Reasoning and Acting** | [PDF](https://arxiv.org/abs/2210.03629) | `Agent`, `Tools` | ✅ Done |
+| 2026-02-05 | **Large Language Models are Zero-Shot Reasoners** | [PDF](https://arxiv.org/abs/2205.11916) | `Zero-Shot`, `Prompting` |  |
 
 ### Phase 3: Fine-tuning & Adaptation (The "Skill")
 | Date | Paper Title | Links | Tags | Status |
