@@ -1,51 +1,91 @@
 # 🦉 AI & Logic: Paper Reading Notes
 
-[![Status](https://img.shields.io/badge/Status-Active-success)]()
-[![Focus](https://img.shields.io/badge/Focus-LLM_%26_Reasoning-blue)]()
-[![Author](https://img.shields.io/badge/Author-SYSU_Logic_Master-purple)]()
+[![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)]()
+[![Focus](https://img.shields.io/badge/Focus-LLM_%26_Reasoning-blue?style=flat-square)]()
+[![Author](https://img.shields.io/badge/Author-SYSU_Logic_Master-purple?style=flat-square)]()
+[![Progress](https://img.shields.io/badge/Progress-Phase_3_In_Progress-orange?style=flat-square)]()
 
 > "Reading papers is not just about gaining knowledge, but about deconstructing the logic behind intelligence."
 
 ## 📖 Introduction (项目简介)
 
-This repository serves as my personal knowledge base, documenting my journey from **Formal Logic** to **Deep Learning Engineering**. 
+This repository serves as my personal knowledge base, documenting my journey from **Formal Logic** to **Deep Learning Engineering**.
 
-I focus on:
-*   **Classic Architectures:** From Transformer to GPT series.
-*   **Reasoning Abilities:** CoT, ToT, and Neuro-Symbolic AI.
-*   **Vertical Applications:** Law, Math, and Logic verification.
+As a Logic Master (SYSU), I am particularly interested in the intersection of **Neuro-Symbolic AI**:
+*   **Classic Architectures:** Deconstructing the vector space semantics.
+*   **Reasoning Abilities:** How strict logical deduction emerges from probabilistic next-token prediction.
+*   **Alignment & Safety:** Mapping human values (Ethics/Law) into model constraints.
 
 ## 📂 Structure (目录结构)
 
 - `📂 notes/`: My in-depth analysis and summaries (Markdown).
 - `📄 README.md`: The roadmap and progress tracker.
+- `🧠 thoughts/`: Essays on "Logic vs. Neural Networks".
 
-## 📝 Reading List & Progress (阅读清单)
+## 📝 Reading List & Roadmap (阅读清单与路线图)
 
-### Phase 1: The Foundation (BERT & GPT)
-| Date | Paper Title | Links | Tags | My Notes |
+### Phase 1: The Foundation (Architecture & Scale)
+| Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 2025-12-30 | **Attention Is All You Need** | [PDF](https://arxiv.org/pdf/1706.03762.pdf) | `Transformer` | [Read](./notes/2017_Attention.md) |
-| 2025-12-30 | **BERT: Pre-training of Deep Bidirectional Transformers** | [PDF](https://arxiv.org/pdf/1810.04805.pdf) | `Encoder` | [Read](./notes/2018_BERT.md) |
-| 2026-01-08 | **Language Models are Few-Shot Learners (GPT-3)** | [PDF](https://arxiv.org/pdf/2005.14165.pdf) | `Decoder` | [Read](./notes/2020_GPT3.md) |
+| 2025-12-30 | **Attention Is All You Need** | [PDF](https://arxiv.org/pdf/1706.03762.pdf) | `Transformer` | ✅ Done |
+| 2025-12-30 | **BERT: Pre-training of Deep Bidirectional Transformers** | [PDF](https://arxiv.org/pdf/1810.04805.pdf) | `Encoder` | ✅ Done |
+| 2026-01-08 | **Language Models are Few-Shot Learners (GPT-3)** | [PDF](https://arxiv.org/pdf/2005.14165.pdf) | `Decoder`, `Few-Shot` | ✅ Done |
+| 2026-01-20 | **Emergent Abilities of Large Language Models** | [PDF](https://arxiv.org/abs/2206.07682) | `Scaling_Law`, `Phase_Transition` | ✅ Done |
 
-### Phase 2: Reasoning & Agents
-| Date | Paper Title | Links | Tags | My Notes |
+### Phase 2: Reasoning & Agents (The "Mind")
+
+| Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | [Read](./notes/2022_CoT.md) |
-| 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning in Language Models** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT-SC` | [Read](./notes/2023_Self_Consistency.md) |
-| 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving with Large Language Models** | [PDF](https://arxiv.org/abs/2305.10601) | `ToT` | [Read](./notes/2023_Tree_of_Thoughts.md) |
-| 2026-01-14 | **ReAct: Synergizing Reasoning and Acting in Language Models** | [PDF](https://arxiv.org/abs/2210.03629) | `Agent、tools_call` | [Read](./notes/2023_ReAct.md) |
+| 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | ✅ Done |
+| 2026-01-22 | **Large Language Models are Zero-Shot Reasoners** | [PDF](https://arxiv.org/abs/2205.11916) | `Zero-Shot`, `Prompting` | ✅ Done |
+| 2026-01-10 | **Self-Consistency Improves Chain of Thought Reasoning** | [PDF](https://arxiv.org/abs/2203.11171) | `CoT-SC`, `Ensemble` | ✅ Done |
+| 2026-01-13 | **Tree of Thoughts: Deliberate Problem Solving** | [PDF](https://arxiv.org/abs/2305.10601) | `ToT`, `Search` | ✅ Done |
+| 2026-01-14 | **ReAct: Synergizing Reasoning and Acting** | [PDF](https://arxiv.org/abs/2210.03629) | `Agent`, `Tools` | ✅ Done |
 
-### Phase 3: Fine_tunning Techniques (In Progress)
-| Date | Paper Title | Links | Tags | My Notes |
+### Phase 3: Fine-tuning & Adaptation (The "Skill")
+| Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-01-15 | **LoRA: Low-Rank Adaptation of Large Language Models** | [PDF](https://arxiv.org/abs/2106.09685) | `LoRA,fine_tuning` | [Read](./notes/2021_LoRA.md) |
-| 2026-01-16 | **QLoRA: Efficient Finetuning of Quantized LLMs** | [PDF](https://arxiv.org/abs/2305.14314) | `QLoRA,Quantization,fine_tuning` | [Read](./notes/2023_QLoRA.md) |
+| 2026-02-01 | **Finetuned Language Models Are Zero-Shot Learners (FLAN)** | [PDF](https://arxiv.org/abs/2109.01652) | `Instruction_Tuning` | 🏃 In Progress |
+| 2026-01-15 | **LoRA: Low-Rank Adaptation of LLMs** | [PDF](https://arxiv.org/abs/2106.09685) | `PEFT`, `LoRA` | ✅ Done |
+| 2026-01-16 | **QLoRA: Efficient Finetuning of Quantized LLMs** | [PDF](https://arxiv.org/abs/2305.14314) | `Quantization` | ✅ Done |
 
-## 💡 Key Takeaways (核心思考)
-*   **Logic in AI:** How to map formal logic rules into vector space?
-*   **Emergence:** At what scale does "reasoning" emerge from "statistics"?
+---
+
+### Phase 4: Alignment & Human Preference (The "Values")
+| Date | Paper Title | Links | Tags | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-02-05 | **Training language models to follow instructions (InstructGPT)** | [PDF](https://arxiv.org/abs/2203.02155) | `RLHF`, `PPO` | 📅 Planned |
+| 2026-02-08 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | 📅 Planned |
+| 2026-02-10 | **Constitutional AI: Harmlessness from AI Feedback** | [PDF](https://arxiv.org/abs/2212.08073) | `RLAIF`, `Safety` | 📅 Planned |
+
+### Phase 5: Neuro-Symbolic, Code & Math (The "Logic")
+| Date | Paper Title | Links | Tags | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-02-14 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | 📅 Planned |
+| 2026-02-16 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math` | 📅 Planned |
+| 2026-02-18 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
+
+### Phase 6: Modern Architectures (The "SOTA")
+| Date | Paper Title | Links | Tags | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-02-22 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `RoPE`, `SwiGLU` | 📅 Planned |
+| 2026-02-24 | **Mixture-of-Experts Meets Instruction Tuning (Mixtral)** | [PDF](https://arxiv.org/abs/2305.14705) | `MoE`, `Sparse` | 📅 Planned |
+| 2026-02-26 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | 📅 Planned |
+
+## 💡 Research Questions (核心思考)
+
+As a logician, I am pondering:
+
+1.  **The "Grounding" Problem:**
+    *   Formal logic relies on strict truth values (True/False). Neural networks rely on probability distributions ($P(x|y)$). How can we build a bridge that guarantees logical validity in a probabilistic system?
+    *   *Reference:* Neuro-Symbolic AI, Theorem Proving.
+
+2.  **Process vs. Outcome:**
+    *   In Logic, a valid argument requires a valid form, not just a true conclusion.
+    *   Current RLHF rewards the outcome. How can we verify the "thought process" (Process Supervision)?
+
+3.  **Emergence:**
+    *   Is reasoning a memorized pattern or a genuine emergent capability? Can it be formalized using Category Theory?
 
 ---
 *Created by [MengzhongRe](https://github.com/MengzhongRe) @ 2026*
