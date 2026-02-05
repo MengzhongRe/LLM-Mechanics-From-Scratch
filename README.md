@@ -20,6 +20,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 
 - `📂 notes/`: My in-depth analysis and summaries (Markdown).
 - `📄 README.md`: The roadmap and progress tracker.
+- `🧠 thoughts/`: Essays on "Logic vs. Neural Networks".
 
 ## 📝 Reading List & Roadmap (阅读清单与路线图)
 
@@ -32,7 +33,6 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-02-04 | **Emergent Abilities of Large Language Models** | [PDF](https://arxiv.org/abs/2206.07682) | `Scaling_Law`, `Phase_Transition` | ✅ Done |
 
 ### Phase 2: Reasoning & Agents (The "Mind")
-
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-01-09 | **Chain-of-Thought Prompting Elicits Reasoning** | [PDF](https://arxiv.org/pdf/2201.11903.pdf) | `CoT` | ✅ Done |
@@ -47,7 +47,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-01-15 | **LoRA: Low-Rank Adaptation of LLMs** | [PDF](https://arxiv.org/abs/2106.09685) | `PEFT`, `LoRA` | ✅ Done |
 | 2026-01-16 | **QLoRA: Efficient Finetuning of Quantized LLMs** | [PDF](https://arxiv.org/abs/2305.14314) | `Quantization` | ✅ Done |
 | 2026-02-05 | **Finetuned Language Models Are Zero-Shot Learners (FLAN)** | [PDF](https://arxiv.org/abs/2109.01652) | `Instruction_Tuning` | 🏃 In Progress |
----
+| 2026-02-07 | **LongLoRA: Efficient Fine-tuning of Long-Context LLMs** | [PDF](https://arxiv.org/abs/2309.12307) | `Long_Context`, `PEFT` | 📅 Planned |
 
 ### Phase 4: Alignment & Human Preference (The "Values")
 | Date | Paper Title | Links | Tags | Status |
@@ -55,6 +55,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-02-06 | **Training language models to follow instructions (InstructGPT)** | [PDF](https://arxiv.org/abs/2203.02155) | `RLHF`, `PPO` | 📅 Planned |
 | 2026-02-08 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | 📅 Planned |
 | 2026-02-09 | **Constitutional AI: Harmlessness from AI Feedback** | [PDF](https://arxiv.org/abs/2212.08073) | `RLAIF`, `Safety` | 📅 Planned |
+| 2026-02-11 | **Training Verifiers to Solve Math Word Problems** | [PDF](https://arxiv.org/abs/2110.14168) | `Verifier`, `Reward_Modelling` | 📅 Planned |
 
 ### Phase 5: Neuro-Symbolic, Code & Math (The "Logic")
 | Date | Paper Title | Links | Tags | Status |
@@ -62,6 +63,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-02-14 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | 📅 Planned |
 | 2026-02-16 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math` | 📅 Planned |
 | 2026-02-18 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
+| 2026-02-20 | **Neural-Symbolic Reasoning with LLMs** | [PDF](https://arxiv.org/abs/2401.04823) | `Neuro-Symbolic`, `Survey` | 📅 Planned |
 
 ### Phase 6: Modern Architectures (The "SOTA")
 | Date | Paper Title | Links | Tags | Status |
@@ -69,6 +71,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-02-22 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `RoPE`, `SwiGLU` | 📅 Planned |
 | 2026-02-24 | **Mixture-of-Experts Meets Instruction Tuning (Mixtral)** | [PDF](https://arxiv.org/abs/2305.14705) | `MoE`, `Sparse` | 📅 Planned |
 | 2026-02-26 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | 📅 Planned |
+| 2026-02-28 | **Memorizing Transformers** | [PDF](https://arxiv.org/abs/2203.08913) | `Memory`, `kNN-LM` | 📅 Planned |
 
 ## 💡 Research Questions (核心思考)
 
@@ -78,12 +81,13 @@ As a logician, I am pondering:
     *   Formal logic relies on strict truth values (True/False). Neural networks rely on probability distributions ($P(x|y)$). How can we build a bridge that guarantees logical validity in a probabilistic system?
     *   *Reference:* Neuro-Symbolic AI, Theorem Proving.
 
-2.  **Process vs. Outcome:**
+2.  **Process vs. Outcome (Validity vs. Soundness):**
     *   In Logic, a valid argument requires a valid form, not just a true conclusion.
-    *   Current RLHF rewards the outcome. How can we verify the "thought process" (Process Supervision)?
+    *   Current RLHF rewards the outcome. How can we verify the "thought process" using **Process Reward Models (PRM)**?
 
-3.  **Emergence:**
-    *   Is reasoning a memorized pattern or a genuine emergent capability? Can it be formalized using Category Theory?
+3.  **Emergence & Category Theory:**
+    *   Is reasoning a memorized pattern or a genuine emergent capability?
+    *   Can we model the compositional generalization of LLMs using Category Theory (e.g., functors between syntax and semantics)?
 
 ---
 *Created by [MengzhongRe](https://github.com/MengzhongRe) @ 2026*
