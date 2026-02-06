@@ -46,7 +46,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-01-15 | **LoRA: Low-Rank Adaptation of LLMs** | [PDF](https://arxiv.org/abs/2106.09685) | `PEFT`, `LoRA` | ✅ Done |
 | 2026-01-16 | **QLoRA: Efficient Finetuning of Quantized LLMs** | [PDF](https://arxiv.org/abs/2305.14314) | `Quantization` | ✅ Done |
-| 2026-02-05 | **Finetuned Language Models Are Zero-Shot Learners (FLAN)** | [PDF](https://arxiv.org/abs/2109.01652) | `Instruction_Tuning` | 🏃 In Progress |
+| 2026-02-06 | **Finetuned Language Models Are Zero-Shot Learners (FLAN)** | [PDF](https://arxiv.org/abs/2109.01652) | `Instruction_Tuning` | ✅ Done |
 | 2026-02-07 | **LongLoRA: Efficient Fine-tuning of Long-Context LLMs** | [PDF](https://arxiv.org/abs/2309.12307) | `Long_Context`, `PEFT` | 📅 Planned |
 
 ### Phase 4: Alignment & Human Preference (The "Values")
