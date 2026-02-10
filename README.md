@@ -53,8 +53,8 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-02-08 | **Training language models to follow instructions (InstructGPT)** | [PDF](https://arxiv.org/abs/2203.02155) | `RLHF`, `PPO` | ✅ Done |
-| 2026-02-09 | **Constitutional AI: Harmlessness from AI Feedback** | [PDF](https://arxiv.org/abs/2212.08073) | `RLAIF`, `Safety` | 📅 Planned |
-| 2026-02-10 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | 📅 Planned |
+| 2026-02-10 | **Constitutional AI: Harmlessness from AI Feedback** | [PDF](https://arxiv.org/abs/2212.08073) | `RLAIF`, `Safety` | ✅ Done |
+| 2026-02-12 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | 📅 Planned |
 | 2026-02-11 | **Training Verifiers to Solve Math Word Problems** | [PDF](https://arxiv.org/abs/2110.14168) | `Verifier`, `Reward_Modelling` | 📅 Planned |
 
 ### Phase 5: Neuro-Symbolic, Code & Math (The "Logic")
