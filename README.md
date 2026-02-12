@@ -54,16 +54,18 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-02-08 | **Training language models to follow instructions (InstructGPT)** | [PDF](https://arxiv.org/abs/2203.02155) | `RLHF`, `PPO` | ✅ Done |
 | 2026-02-10 | **Constitutional AI: Harmlessness from AI Feedback** | [PDF](https://arxiv.org/abs/2212.08073) | `RLAIF`, `Safety` | ✅ Done |
-| 2026-02-12 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | 📅 Planned |
-| 2026-02-11 | **Training Verifiers to Solve Math Word Problems** | [PDF](https://arxiv.org/abs/2110.14168) | `Verifier`, `Reward_Modelling` | 📅 Planned |
+| 2026-02-11 | **Direct Preference Optimization (DPO)** | [PDF](https://arxiv.org/abs/2305.18290) | `Alignment`, `Optimization` | ✅ Done |
+| 2026-02-12 | **Training Verifiers to Solve Math Word Problems** | [PDF](https://arxiv.org/abs/2110.14168) | `Verifier`, `Reward_Modelling` | ✅ Done |
 
 ### Phase 5: Neuro-Symbolic, Code & Math (The "Logic")
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-02-14 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | 📅 Planned |
-| 2026-02-16 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math` | 📅 Planned |
-| 2026-02-18 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
+| 2026-02-13 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | 📅 Planned |
+| 2026-02-14 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math` | 📅 Planned |
+| 2026-02-15 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
 | 2026-02-20 | **Neural-Symbolic Reasoning with LLMs** | [PDF](https://arxiv.org/abs/2401.04823) | `Neuro-Symbolic`, `Survey` | 📅 Planned |
+
+
 
 ### Phase 6: Modern Architectures (The "SOTA")
 | Date | Paper Title | Links | Tags | Status |
