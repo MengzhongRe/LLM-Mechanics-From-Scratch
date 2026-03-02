@@ -63,7 +63,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-02-13 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | ✅ Done |
 | 2026-02-14 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math`, `SOTA` | 📅 Planned |
 | 2026-02-15 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
-| 2026-02-18 | **AlphaGeometry: Solving Olympiad Geometry** | [Nature](https://www.nature.com/articles/s41586-023-06747-5) | `Neuro-Symbolic`, `IMO` | **✨ Highly Rec** |
+| 2026-02-18 | **AlphaGeometry: Solving Olympiad Geometry** | [Nature](https://www.nature.com/articles/s41586-023-06747-5) | `Neuro-Symbolic`, `IMO` | ✅ Done |
 | 2026-02-20 | **Faithful Reasoning Using Plausible Reasoning** | [PDF](https://arxiv.org/abs/2205.09712) | `Maieutic`, `Consistency`, `Abductive` | **🧩 Logic_Fit** |
 
 ### Phase 6: Modern Architectures (The "SOTA")
