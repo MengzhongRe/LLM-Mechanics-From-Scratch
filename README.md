@@ -61,16 +61,16 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-02-13 | **PAL: Program-aided Language Models** | [PDF](https://arxiv.org/abs/2211.10435) | `Code`, `Symbolic` | ✅ Done |
-| 2026-02-14 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math`, `SOTA` | 📅 Planned |
+| 2026-02-14 | **Let's Verify Step by Step (Process Reward Models)** | [PDF](https://arxiv.org/abs/2305.20050) | `PRM`, `Math`, `SOTA` | ✅ Done |
 | 2026-02-15 | **LeanDojo: Theorem Proving with Retrieval-Augmented LLMs** | [PDF](https://arxiv.org/abs/2306.15626) | `Theorem_Proving`, `Formal` | 📅 Planned |
 | 2026-03-02 | **AlphaGeometry: Solving Olympiad Geometry** | [Nature](https://www.nature.com/articles/s41586-023-06747-5) | `Neuro-Symbolic`, `IMO` | ✅ Done |
-| 2026-03-03 | **Maieutic Prompting: Logically Consistent Reasoning** | [PDF](https://arxiv.org/abs/2205.11822) | `Maieutic`, `Consistency`, `Abductive` | **✅ Done** |
-| 2026-03-04 | **Least-to-Most Prompting Enables Complex Reasoning** | [PDF](https://arxiv.org/abs/2205.10625) | `Decomposition`, `Symbolic`, `SOTA` | **** |
+| 2026-03-03 | **Maieutic Prompting: Logically Consistent Reasoning** | [PDF](https://arxiv.org/abs/2205.11822) | `Maieutic`, `Consistency`, `Abductive` | ✅ Done |
+| 2026-03-04 | **Least-to-Most Prompting Enables Complex Reasoning** | [PDF](https://arxiv.org/abs/2205.10625) | `Decomposition`, `Symbolic`, `SOTA` | ✅ Done |
 
 ### Phase 6: Modern Architectures (The "SOTA")
 | Date | Paper Title | Links | Tags | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 2026-03-04 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `RoPE`, `SwiGLU` | 📅 Planned |
+| 2026-03-04 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `LLaMa`,`RoPE`, `SwiGLU` |Done|
 | 2026-03-05 | **Mixtral of Experts** | [PDF](https://arxiv.org/abs/2401.04088) | `MoE`, `Sparse_Activation` | **🔥 Industry_Std** |
 | 2026-03-06 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | 📅 Planned |
 | 2026-03-07 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | 📅 Planned |
