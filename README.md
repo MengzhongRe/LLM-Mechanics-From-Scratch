@@ -31,11 +31,10 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 
 | Domain | Paper / Topic | Core Concept | PyTorch Implementation | Note Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **Foundation** | [Attention Is All You Need] | Scaled Dot-Product, MHA | [`multi_head_attention.py`](./02_Handwritten_Operators/attention_mechanisms/multi_head_attention.py) | [Note](./01_Paper_Notes/Foundation/2017_Attention.md) |
-| **Foundation** | Numerical Stability | Safe Softmax |[`safe_softmax.py`](./02_Handwritten_Operators/activations_and_norms/safe_softmax.py) | N/A |
-| **Architecture** | [LLaMA (2023)] | RoPE, SwiGLU, RMSNorm | *[WIP]* | [Note](./01_Paper_Notes/Modern_Architecture/2023_LLaMa.md) |
-| **Architecture** | [Mixtral 8x7B (2024)] | Sparse MoE, Top-2 Router | *[WIP]* | [Note](./01_Paper_Notes/Modern_Architecture/2024_SMoE.md) |
-| **Architecture** |[GQA (2023)] | Grouped-Query Attention | *[Planned]* | *[Planned]* |
+| **Foundation** | [Attention is all you need] | Scaled Dot-Product, MHA | [`multi_head_attention.py`](./02_Handwritten_Operators/multi_head_attention.py) | [Note](./01_Paper_Notes/Foundation/2017_Attention.md) |
+| **Foundation** | Numerical Stability | Safe Softmax |[`safe_softmax.py`](./02_Handwritten_Operators/safe_softmax.py) | N/A |
+| **Architecture** |[Flash Attention]| online_softmax| [`online_softmax.py`](./02_Handwritten_Operators/online_softmax.py) | [Note](./01_Paper_Notes/Modern_Architecture/2022_Flash_Attention.md) |
+
 
 *(Status: Continuously updating on Fridays...)*
 
@@ -92,7 +91,7 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-03-04 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `LLaMa`,`RoPE`, `SwiGLU` | ✅ Done |
 | 2026-03-05 | **Mixtral of Experts** | [PDF](https://arxiv.org/abs/2401.04088) | `MoE`, `Sparse_Activation` | ✅ Done |
 | 2026-03-06 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | ✅ Done |
-| 2026-03-07 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | 📅 Planned |
+| 2026-03-07 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | ✅ Done |
 | 2026-03-08 | **GQA: Training Generalized Multi-Query Transformer Models** |[PDF](https://arxiv.org/abs/2305.13245) | `KV_Cache`, `Inference` | 📅 Planned |
 | 2026-03-09 | **Mamba: Linear-Time Sequence Modeling with Selective State Spaces** | [PDF](https://arxiv.org/abs/2312.00752) | `SSM`, `Beyond_Transformer`| 📅 Planned |
 | 2026-03-10 | **Visual Instruction Tuning (LLaVA)** | [PDF](https://arxiv.org/abs/2304.08485) | `Multimodal`, `VLM` | 📅 Planned |

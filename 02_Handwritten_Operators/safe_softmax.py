@@ -1,6 +1,6 @@
 import torch
-# 手动实现softmax函数
-def my_softmax(x,dim=-1):
+# 手动实现safe_softmax函数
+def safe_softmax(x,dim=-1):
     # 将x减去每行最大值，防止经过指数运算后计算机内存溢出，NaN
     # 取完最大值之后与原张量X大小不匹配，所以需要keepdim=True
     # pytorch的max函数在输入dim参数后会返回一个(结果,结果索引)的元组，我们只要结果所以取第一个值
@@ -16,6 +16,6 @@ def my_softmax(x,dim=-1):
 if __name__ == '__main__':
     x = torch.tensor([[1000.0,2000.0,3000.0]])
     print(torch.softmax(x,dim=-1))
-    print(my_softmax(x,dim=-1))
-    assert torch.allclose(torch.softmax(x,dim=-1), my_softmax(x,dim=-1))
+    print(safe_softmax(x,dim=-1))
+    assert torch.allclose(torch.softmax(x,dim=-1), safe_softmax(x,dim=-1))
     print('验证通过，sofmtax实现成功')
