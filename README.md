@@ -31,9 +31,11 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 
 | Domain | Paper / Topic | Core Concept | PyTorch Implementation | Note Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **Foundation** | [Attention is all you need] | Scaled Dot-Product, MHA | [`multi_head_attention.py`](./02_Handwritten_Operators/multi_head_attention.py) | [Note](./01_Paper_Notes/Foundation/2017_Attention.md) |
-| **Foundation** | Numerical Stability | Safe Softmax |[`safe_softmax.py`](./02_Handwritten_Operators/safe_softmax.py) | N/A |
-| **Architecture** |[Flash Attention]| online_softmax| [`online_softmax.py`](./02_Handwritten_Operators/online_softmax.py) | [Note](./01_Paper_Notes/Modern_Architecture/2022_Flash_Attention.md) |
+| **Foundation** | [Attention is all you need] | Scaled Dot-Product, MHA | [`multi_head_attention.py`](./02_Handwritten_Operators/Foundation/multi_head_attention.py) | [Note](./01_Paper_Notes/Foundation/2017_Attention.md) |
+| **Foundation** | Numerical Stability | Safe Softmax |[`safe_softmax.py`](./02_Handwritten_Operators/Foundation/safe_softmax.py) | N/A |
+| **Foundation** | Prefill & Inference | decoding & top_k & top_p sampling |[`generate_next_token.py`](./02_Handwritten_Operators/generate_next_token.py) | N/A |
+| **Architecture** |[Flash Attention]| online_softmax| [`online_softmax.py`](./02_Handwritten_Operators/Architecture/online_softmax.py) | [Note](./01_Paper_Notes/Modern_Architecture/2022_Flash_Attention.md) |
+| **Architecture** |[GQA]| GropuedQueryAttention| [`gropued_query_attention.py`](./02_Handwritten_Operators/Architecture/grouped_query_attention.py) | [Note](./01_Paper_Notes/Modern_Architecture/2023_GQA.md) |
 
 
 *(Status: Continuously updating on Fridays...)*
@@ -91,9 +93,9 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-03-04 | **LLaMA: Open and Efficient Foundation Language Models** | [PDF](https://arxiv.org/abs/2302.13971) | `LLaMa`,`RoPE`, `SwiGLU` | ✅ Done |
 | 2026-03-05 | **Mixtral of Experts** | [PDF](https://arxiv.org/abs/2401.04088) | `MoE`, `Sparse_Activation` | ✅ Done |
 | 2026-03-06 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | ✅ Done |
-| 2026-03-07 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | ✅ Done |
-| 2026-03-08 | **GQA: Training Generalized Multi-Query Transformer Models** |[PDF](https://arxiv.org/abs/2305.13245) | `KV_Cache`, `Inference` | 📅 Planned |
-| 2026-03-09 | **Mamba: Linear-Time Sequence Modeling with Selective State Spaces** | [PDF](https://arxiv.org/abs/2312.00752) | `SSM`, `Beyond_Transformer`| 📅 Planned |
+| 2026-03-10 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | ✅ Done |
+| 2026-03-12 | **GQA: Training Generalized Multi-Query Transformer Models** |[PDF](https://arxiv.org/abs/2305.13245) | `KV_Cache`, `Inference` | ✅ Done |
+| 2026-03-03 | **Mamba: Linear-Time Sequence Modeling with Selective State Spaces** | [PDF](https://arxiv.org/abs/2312.00752) | `SSM`, `Beyond_Transformer`| 📅 Planned |
 | 2026-03-10 | **Visual Instruction Tuning (LLaVA)** | [PDF](https://arxiv.org/abs/2304.08485) | `Multimodal`, `VLM` | 📅 Planned |
 
 ---
@@ -116,3 +118,23 @@ As a logician, I am pondering:
 
 ---
 *Created by [MengzhongRe](https://github.com/MengzhongRe) @ 2026*
+
+### 🚀 字节跳动 / 头部大厂 LLM 算法岗【必考手撕清单】
+
+除了 Online Softmax，对于大模型算法岗（尤其是 2025-2026 年的面试行情），以下是你**必须在白板上用 PyTorch 滚瓜烂熟手撕出来的代码**：
+
+#### 🌟 绝对高频（T0 级别，必考）
+1.  **RoPE（旋转位置编码）**：
+    *   这是目前 LLaMA 系模型的绝对基石。你必须能用 PyTorch 写出复数乘法版本或者矩阵版本的 RoPE 注入逻辑。
+2.  **MQA / GQA（明天你的阅读计划！）**：
+    *   面试官非常喜欢让你手撕 GQA（分组查询注意力）的 `repeat_interleave` 或者 `expand` 逻辑。因为这直接关系到推理加速！
+3.  **KV Cache 的前向传播（自回归解码）**：
+    *   让你写一个 `generate` 函数，模拟带 KV Cache 的 token-by-token 生成过程。要求显存不能随长度平方增加。
+
+#### ⭐ 进阶加分（T1 级别）
+4.  **LoRA（低秩微调）的核心 Forward**：
+    *   要求手写一个 `LoRALinear` 层，包含 $A$ 矩阵、$B$ 矩阵的初始化（一个 Normal，一个 Zero），以及缩放系数 `scaling = alpha / r` 的前向逻辑。
+5.  **RMSNorm**：
+    *   替代传统 LayerNorm 的代码，要写出为什么它少减了一个均值，并且加上可学习参数 $\gamma$。
+6.  **Top-p / Top-k 采样算法**：
+    *   在大模型输出 Logits 后，手写截断和概率归一化逻辑。
