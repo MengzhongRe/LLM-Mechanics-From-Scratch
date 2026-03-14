@@ -89,3 +89,21 @@ def generate_next_token(logits, temperature=1.0, top_k=50, top_p=0.9):
     next_token = torch.multinomial(probs, num_samples=1)
     
     return next_token
+
+# ============================================================
+# 测试用例
+# ============================================================
+if __name__ == '__main__':
+    Batch_size = 2
+    vocab_size = 32000
+    temperature = 0.7
+    top_k = 50
+    top_p = 0.9
+
+    # 伪造输入logits
+    logits = torch.randn((Batch_size,vocab_size))
+    print(f'输入logist维度为: {logits.shape}')
+
+    next_token = generate_next_token(logits,temperature,top_k,top_p)
+    print(f'输出next_token维度为:{next_token.shape}')
+    print(f'输出next_token为:{next_token}')

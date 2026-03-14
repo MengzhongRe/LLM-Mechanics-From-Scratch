@@ -95,8 +95,8 @@ As a Logic Master (SYSU), I am particularly interested in the intersection of **
 | 2026-03-06 | **Lost in the Middle: How Language Models Use Long Contexts** | [PDF](https://arxiv.org/abs/2307.03172) | `Long_Context` | ✅ Done |
 | 2026-03-10 | **FlashAttention: Fast and Memory-Efficient Exact Attention** | [PDF](https://arxiv.org/abs/2205.14135) | `IO-Aware`, `Optimization` | ✅ Done |
 | 2026-03-12 | **GQA: Training Generalized Multi-Query Transformer Models** |[PDF](https://arxiv.org/abs/2305.13245) | `KV_Cache`, `Inference` | ✅ Done |
-| 2026-03-03 | **Mamba: Linear-Time Sequence Modeling with Selective State Spaces** | [PDF](https://arxiv.org/abs/2312.00752) | `SSM`, `Beyond_Transformer`| 📅 Planned |
-| 2026-03-10 | **Visual Instruction Tuning (LLaVA)** | [PDF](https://arxiv.org/abs/2304.08485) | `Multimodal`, `VLM` | 📅 Planned |
+| 2026-03-14 | **Mamba: Linear-Time Sequence Modeling with Selective State Spaces** | [PDF](https://arxiv.org/abs/2312.00752) | `SSM`, `Beyond_Transformer`| ✅ Done |
+| 2026-03-16 | **Visual Instruction Tuning (LLaVA)** | [PDF](https://arxiv.org/abs/2304.08485) | `Multimodal`, `VLM` | 📅 Planned |
 
 ---
 
