@@ -47,7 +47,7 @@ This repository strictly follows the **"3D Documentation Organization"** tailore
 
 | 天数 | 核心主题与手撕代码 | 核心阅读论文与直达链接 (重点精读) | 考核点与测试提示 (Sanity Check) |
 | :--- | :--- | :--- | :--- |
-| **Day 1-3** | **BPE Tokenizer**<br>[`bpe_tokenizer.py`]() | **NMT of Rare Words (BPE)**<br>🔗 [PDF](https://arxiv.org/pdf/1508.07909.pdf) <br>🎯 *精读 Sec 3.2 (Algorithm 1)* | 1. 统计最高频的 Byte-pair 并合并。<br>2. 编写 `encode` 与 `decode` 函数，处理 OOV 和特殊控制符（如 `<think>`）。 |
+| **Day 1-3** | **BPE Tokenizer**<br>[`bpe_tokenizer.py`]() | **NMT of Rare Words (BPE)**<br>🔗 [PDF](https://arxiv.org/pdf/1508.07909.pdf) <br>🎯 *精读 Sec 3.2 (Algorithm 1)* | 1. 实现字符级的BPE算法主要逻辑，包括规范化、预分词、统计词频、合并词对、更新词表、解码等。<br>2. 注意处理特殊字符，如<think>、</think>等。<br>3.编写GPT字节级(byte-level)BPE分词算法，重点实现byte_to_unicode()字节到Unicode字符的映射函数，注意train、encode、decode在字符和字节之间的编码与解码处理 |
 
 ### Phase 1: 现代大模型骨架与底层直觉 (Modern Backbone & Triton)
 *目标：严格按照前向传播的数据流，重构带有 MoE 的现代 LLaMA/Mixtral 架构。*
