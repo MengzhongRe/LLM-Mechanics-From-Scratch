@@ -19,6 +19,7 @@ class BPETokenizer:
             '</think>': 1002,
             '<UNK>': 1003,
         }
+        
         self.special_tokens_inv = {v:k for k,v in self.special_tokens.items()}
 
         # 预分词正则:匹配缩写('s、't)、单词（可能带前导空格）、标点、连续空格
