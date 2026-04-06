@@ -6,7 +6,7 @@ def generate_next_token(logits, temperature=1.0, top_k=50, top_p=0.9):
     大模型标准解码管线 (Interview Level)
     
     参数:
-    logits: [Batch_size, vocab_size] 语言模型头输出的原始得分
+    logits: [Batch_size, L, vocab_size] 语言模型头输出的原始得分
     temperature: 浮点数，控制随机性
     top_k: 整数，保留前 k 个最高概率的词
     top_p: 浮点数，保留累加概率刚刚超过 p 的词 (核采样)
@@ -14,7 +14,16 @@ def generate_next_token(logits, temperature=1.0, top_k=50, top_p=0.9):
     返回:
     next_token: [Batch_size, 1] 抽样出的下一个词的 ID
     """
-    
+    # ======================================================
+    # 0. 维度自适应兼容
+    # ========================================================
+    # [Batch, Seq_Len, Vocab] -> 只取最后一个时间步，降维成 [Batch, Vocab]
+    if logits.dim() == 3:
+        logits = logits[:,-1]
+    elif logits.dim() == 2:
+        pass
+    else:
+        raise ValueError(f'❌️ logits 的维度必须是 2 或 3，但收到了{logits.dim()} 维张量！')
     # ---------------------------------------------------------
     # 1. 贪婪解码特判 (如果温度极低，直接选最大值，省去复杂计算)
     # ---------------------------------------------------------
@@ -32,7 +41,7 @@ def generate_next_token(logits, temperature=1.0, top_k=50, top_p=0.9):
     # ---------------------------------------------------------
     top_k = min(top_k,logits.size(-1))
     if top_k > 0:
-        # 找出第 k 大的值和对应的索引，torch.topk为自动将返回的结果降序排序
+        # 找出第 k 大的值和对应的索引，torch.topk自动将返回的结果降序排序
         # top_values:[Batch, k]
         top_values, _ = torch.topk(logits, top_k, dim=-1)
         
@@ -90,20 +99,84 @@ def generate_next_token(logits, temperature=1.0, top_k=50, top_p=0.9):
     
     return next_token
 
-# ============================================================
-# 测试用例
-# ============================================================
+# ==============================================================
+# 模块二：测试用例
+# ===============================================================
+def test_sampler():
+    print('🚀 开始进行 Sampler 极限抗压测试...\n')
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    # 为了保证部分测试的可复现性，固定随机种子
+    torch.manual_seed(42)
+    
+    # ===============================================
+    # Test 1: 绝对贪婪测试
+    # ================================================
+    print(f'-> [Test 1] 绝对贪婪解码测试 (Temperature < 1e-5)')
+    logits = torch.tensor([[10.0,20.0,1.0,2.0,5.0]],device=device)
+    greedy_next_token = generate_next_token(logits,temperature=0.0)
+    assert greedy_next_token.item() == 1,f'❌️ 贪婪解码失败！返回Tokens数为: {greedy_next_token.item()}'
+    print('✅️ 贪婪验证测试成功！')
+
+    # ===================================================
+    # Test 2: Top-K 暴力截断测试(长尾词过滤)
+    # =================================================
+    print('-> [Test 2]  Top-K 长尾词过滤测试(K = 2)')
+    logits = torch.tensor([[10.0,9.0,1.0,2.0,4.0]],device=device)
+    sampled_tokens = []
+    for _ in range(100):
+        t = generate_next_token(logits,temperature=1.0,top_k=2,top_p=1.0)
+        sampled_tokens.append(t.item())
+
+    assert all(token in [0,1] for token in sampled_tokens),'❌️ Top-K 错误，采样到了长尾词!'
+    print(f"  ✅ 成功验证：100次采样结果完全被锁定在 Top-2 内。样本展示: {sampled_tokens[:10]}\n")
+
+    # =========================================================
+    # Test 3: Top-P 右移测试
+    # ==========================================================
+    print('-> [Test 3] Top-P 边界测试')
+    probs = torch.tensor([[0.5,0.3,0.2]],device=device)
+    logits = torch.log(probs)
+
+    # 设定top-p=0.7
+    # 此时如果没有右移，则1号词元永远不会被采样到
+    p_sampled = []
+    for _ in range(100):
+        t = generate_next_token(logits,temperature=1.0,top_k=0.0,top_p=0.7)
+        p_sampled.append(t.item())
+    
+    assert 2 not in p_sampled,'❌️ 漏放了：Top-P掩码失效，把0.2的词也放了进来!'
+    assert 1 in p_sampled,'❌️ 1号词没有被采样到，右移操作失效！'
+    print("  ✅ 成功验证：右移魔术生效，刚好越界的边界词被完美保留！\n")
+
+    # =========================================================
+    # Test 4: Batch 独立性测试
+    # ========================================================
+    print('-> [Test 4] 多 Batch 并发独立性测试')
+    # Batch 0: 词汇 2 最强
+    # Batch 1: 词汇 0 最强
+    # Batch 2: 词汇 3 最强
+    logits = torch.tensor([[0.0, 0.0, 100.0, 0.0],[100.0, 0.0, 0.0, 0.0],[0.0, 0.0, 0.0, 100.0]
+    ], device=device)
+
+    batch_tokens = generate_next_token(logits,temperature=1.0,top_k=50,top_p=0.9)
+    assert batch_tokens[0,0].item() == 2,'Bacth 0 错误'
+    assert batch_tokens[1,0].item() == 0,'Bacth 1 错误'
+    assert batch_tokens[2,0].item() == 3,'Batch 2 错误'
+    print("  ✅ 成功验证：多 Batch 并发时各行采样互不干扰！\n")
+    
+    # ===========================================================
+    # Test 5: 参数越界抗压测试
+    # ===========================================================
+    print('-> [Test 5] 越界参数抗压测试')
+    # 词表共五个词，但是用户硬要传top-k=100
+    logits = torch.tensor([[1.0,2.0,3.0,5.0,5.0]],device=device)
+    try:
+        generate_next_token(logits,temperature=1.0,top_k=100,top_p=1.2)
+        print("  ✅ 成功验证：代码能够自适应并兼容 K 超出词表 和 P 不规范的情况，无崩溃。\n")
+    except Exception as e:
+        print(f'❌️ 代码崩溃: {e}')
+    
+    print("🎉🎉🎉 恭喜！你的采样管线已通过全套大厂级验证，概率坍缩完美运行！")
+
 if __name__ == '__main__':
-    Batch_size = 2
-    vocab_size = 32000
-    temperature = 0.7
-    top_k = 50
-    top_p = 0.9
-
-    # 伪造输入logits
-    logits = torch.randn((Batch_size,vocab_size))
-    print(f'输入logist维度为: {logits.shape}')
-
-    next_token = generate_next_token(logits,temperature,top_k,top_p)
-    print(f'输出next_token维度为:{next_token.shape}')
-    print(f'输出next_token为:{next_token}')
+    test_sampler()
