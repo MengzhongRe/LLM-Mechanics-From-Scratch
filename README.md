@@ -59,9 +59,9 @@ This repository strictly follows the **"3D Documentation Organization"** tailore
 | **Day 11-13** | **MHA & Safe Softmax**<br>[`mha_forward.py`]() | **Attention Is All You Need**<br>🔗[PDF](https://arxiv.org/pdf/1706.03762.pdf) <br>🎯 *精读 Sec 3.2* | 1. 手写因果掩码 (Causal Mask) 的零拷贝广播机制。<br>2. `safe_softmax` 中使用 `x - max(x)` 技巧防止溢出。 |
 | **Day 14-16** | **🔥 SwiGLU FFN**<br>*(大模型的记忆细胞)*<br>[`swiglu_ffn.py`]() | **GLU Variants**<br>🔗 [PDF](https://arxiv.org/pdf/2002.05202.pdf) <br>🎯 *精读 Sec 2 (公式 5/6)* | 1. 手撕“先升维(Up/Gate)再降维(Down)”架构，理解 Key-Value 知识存储机制。<br>2. **[官方实现对齐]** 手写两层Naive版本的FFN，再对齐LLaMA官方的w1.w3权重合并式、与w2特殊初始化的方法，对比两者在运算速度上的区别,并对比compile和手撕的运算区别 |
 | **Day 17-19** | **🔥 MoE Router & Experts**<br>[`moe_layer.py`]() | **Mixtral 8x7B**<br>🔗[PDF](https://arxiv.org/pdf/2401.04088.pdf) <br>🎯 *精读 Sec 2.1* | 1. 将前几天写的 `SwiGLU` 实例化为 8 个 Expert。<br>2. 编写 Top-K Router 得到概率权重。<br>3. **[算子核心]** 手写 `scatter` 分发与 `gather` 组合逻辑。 | <br>4. 在forward函数中手写负载均衡损失aux_loss,使得MoE模型能够真正发挥作用 |<br>5. 手写向量化版本的MoELayer并编写测试用例测试其与for循环Naive版本之间的推理耗时区别并进行逻辑等价性校验 ｜<br>6.编写代码对比负载均衡系数分别在0.01、100.0时，分析导致Router和Expert层之间梯度变化有什么不同 |
-| **Day 20** | **CE Loss & Output Head**<br>[`loss_head.py`]() | **Language Models (GPT-3)** | 用 `LogSumExp` 技巧手撕稳健的 CrossEntropyLoss，完成从隐状态到词表概率分布的最后映射。 |
-| **Day 21** | **Decoding & Generate next token**<br>[`generate_next_token.py`]() | **语言模型解码输出** | 1.手写语言模型解码输出的代码，手撕贪婪解码，温度缩放、Top-k 长尾词截断与Top-P 核采样. <br> 2.并手动编写严谨的测试用例 |
-
+| **Day 20-21** | **CE Loss & Output Head**<br>[`loss_head.py`]() | **Language Models (GPT-3)** | 用 `LogSumExp` 技巧手撕稳健的 CrossEntropyLoss，完成从隐状态到词表概率分布的最后映射。 |
+| **Day 22** | **Decoding & Generate next token**<br>[`generate_next_token.py`]() | **语言模型解码输出** | 1.手写语言模型解码输出的代码，手撕贪婪解码，温度缩放、Top-k 长尾词截断与Top-P 核采样. <br> 2.并手动编写严谨的测试用例 |
+| **Day 23** | **Inverted Droppout**<br>[`inverted_dropout.py`]() | **正则化：反向随机失活** | 1.. <br> 2. |
 
 ### Phase 2: 推理加速与极致显存魔术 (Inference & Memory Magic)
 *目标：攻克 2026 年大厂面试中占比极高（近乎 100% 必考）的显存管理、FlashAttention 思想与 MLA。*
