@@ -14,12 +14,13 @@ class MyEmbedding(nn.Module):
     
     def forward_math_equivalent(self,input_ids):
         """
-        写法一：数学等价：用Linear 和 matmul实现
+        写法一:数学等价:用Linear 和 matmul实现
         """
         # inputd_ids: [Batch_size,Seq_len]
         # 1.离散符号转为独热向量
         # one_hot_vectors: [Batch_size,Seq_len,vocab_size]
         # one_hot_vectors起初是整数张量，但由于self.weight是浮点数参数，矩阵乘法必须是浮点数和浮点数相乘
+        # 由于矩阵乘法不触发pytorch的类型提升，Type Promotion，只有逐元素操作即 + - * /才会
         # 因此需要用float()转换
         one_hot_vectors = F.one_hot(input_ids,num_classes=self.weight.size(0)).float()
 
