@@ -60,31 +60,3 @@ def flash_attention_forward_block(Q_block,K_block,V_block,O_old,m_old,l_old,mask
 
     return O_new,m_new,l_new
 
-
-def flash_attention_forward_block(Q_block,K_block,V_block,O_old,m_old,l_old,mask_block=None):
-    d = Q_block.shape[-1]
-    S_local = torch.matmul(Q_block,K_block.transpose(-2,-1)) / math.sqrt(d)
-
-    if mask_block is not None:
-        S_local = S_local.masked_fill(mask_block,-1e9)
-
-
-    m_local = torch.max(S_local,dim=-1,keepdim=True)[0]
-
-    m_new = torch.maximum(m_old,m_local)
-
-    decay = torch.exp(m_old - m_new)
-
-    P_local = torch.exp(S_local - m_new)
-
-    l_local = torch.sum(P_local,dim=-1,keepdim=True)
-
-    l_new = l_old * decay + l_local
-
-    O_unnormalized = O_old * l_old * decay + P_local @ V_block
-
-    O_new = O_unnormalized / l_new
-
-    return O_new,m_new,l_new
-
-
